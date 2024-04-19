@@ -21,6 +21,18 @@ function playRound(playerSelection, computerSelection) {
         console.log(`Lose`);
     }
 }
-
 playRound(playerSelection, computerSelection) // Test: Check if can play a round and must print a message if win, defeat or draw : DONE!
 
+// Create a function called playGame() to play the game for 5 round
+
+// Create a loop and iterate 5 times = 5 rounds
+
+// Prompt user to choose between 'rock', 'paper', 'scissors'
+
+// Show round # using current iteration count as values
+
+// Print choice of player
+
+// Print choice of computer
+
+// Print if win or defeat or draw
