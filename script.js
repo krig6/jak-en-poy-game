@@ -32,9 +32,10 @@ function playRound(playerSelection, computerSelection) {
 // Create a function called playGame() to play the game for 5 round
 function playGame() {
     // Create a loop and iterate 5 times = 5 rounds
+    let player = 0;
+    let computer = 0;
     for (let i = 1; i <= 5; i++) {
-        let player = 0;
-        let computer = 0;
+
         // Prompt user to choose between 'rock', 'paper', 'scissors'
         let playerSelection = prompt("Rock, paper, scissors. Shoot!"); // declared inside this function so we can loop the prompt 5 times
         let computerSelection = getComputerChoice(); // So we can loop computer's move 5 times
