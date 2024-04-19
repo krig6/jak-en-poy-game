@@ -53,5 +53,12 @@ function playGame() {
             computer++;
         }
     }
+    if (player > computer) {
+        alert('WON THE GAME!');
+    } else if (computer > player) {
+        alert('LOST THE GAME!');
+    } else if (player = computer) {
+        alert('DRAW!');
+    }
 }
 
