@@ -5,7 +5,6 @@ const getComputerChoice = () => {
     return getRandomChoice[Math.floor(Math.random() * getRandomChoice.length)];
 }
 // Test: Check if output is correct and giving random values : DONE!
-
 function ask(question, yes, no) {
     if (confirm(question)) yes()
     else no();
@@ -20,7 +19,6 @@ function exit() {
 }
 
 ask("Try your luck?", game, exit);
-
 // Create a function to play a round with parameters: playerSelection and computerSelection
 function playRound(playerSelection, computerSelection) {
     // Create conditional statement to determine if round is a win, defeat or draw
