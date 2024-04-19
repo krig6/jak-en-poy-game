@@ -1,4 +1,6 @@
 // Create a function to get random choice from the computer
+
+
 const getComputerChoice = () => {
     // Create an array to hold 'rock', 'paper', 'scissors'
     const getRandomChoice = ['rock', 'paper', 'scissors'];
@@ -19,21 +21,23 @@ function playRound(playerSelection, computerSelection) {
         console.log(`Lose`);
     }
 }
-playRound(playerSelection, computerSelection) // Test: Check if can play a round and must print a message if win, defeat or draw : DONE!
+// playRound(playerSelection, computerSelection) // Test: Check if can play a round and must print a message if win, defeat or draw : DONE!
 
 // Create a function called playGame() to play the game for 5 round
 function playGame() {
     // Create a loop and iterate 5 times = 5 rounds
     for (let i = 1; i <= 5; i++) {
         // Prompt user to choose between 'rock', 'paper', 'scissors'
-        let playerSelection = prompt("Rock, paper, scissors. Shoot!");
-        let computerSelection = getComputerChoice();
+        let playerSelection = prompt("Rock, paper, scissors. Shoot!"); // declared inside this function so we can loop the prompt 5 times
+        let computerSelection = getComputerChoice(); // So we can loop computer's move 5 times
         // Show round # using current iteration count as values
         console.log(`Round # ${i} Recap`);
         // Print choice of player
-        console.log(`Player threw in ${playerSelection}`)
+        console.log(`Player threw in ${playerSelection}!`);
         // Print choice of computer
-
+        console.log(`Computer threw in ${computerSelection}!`);
         // Print if win or defeat or draw
+        playRound(playerSelection, computerSelection);
     }
 }
+
