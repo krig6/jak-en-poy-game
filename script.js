@@ -35,7 +35,6 @@ function playGame() {
     let player = 0;
     let computer = 0;
     for (let i = 1; i <= 5; i++) {
-
         // Prompt user to choose between 'rock', 'paper', 'scissors'
         let playerSelection = prompt("Rock, paper, scissors. Shoot!"); // declared inside this function so we can loop the prompt 5 times
         let computerSelection = getComputerChoice(); // So we can loop computer's move 5 times
@@ -63,3 +62,4 @@ function playGame() {
     }
 }
 
+playGame();
