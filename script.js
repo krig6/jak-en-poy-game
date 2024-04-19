@@ -27,6 +27,8 @@ function playRound(playerSelection, computerSelection) {
 function playGame() {
     // Create a loop and iterate 5 times = 5 rounds
     for (let i = 1; i <= 5; i++) {
+        let player = 0;
+        let computer = 0;
         // Prompt user to choose between 'rock', 'paper', 'scissors'
         let playerSelection = prompt("Rock, paper, scissors. Shoot!"); // declared inside this function so we can loop the prompt 5 times
         let computerSelection = getComputerChoice(); // So we can loop computer's move 5 times
@@ -37,7 +39,13 @@ function playGame() {
         // Print choice of computer
         console.log(`Computer threw in ${computerSelection}!`);
         // Print if win or defeat or draw
-        playRound(playerSelection, computerSelection);
+        let result = playRound(playerSelection, computerSelection);
+
+        if (result === 'win') {
+            player++;
+        } else if (result === 'lose') {
+            computer++;
+        }
     }
 }
 
