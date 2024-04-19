@@ -1,6 +1,3 @@
-// Create a function to get random choice from the computer
-
-
 const getComputerChoice = () => {
     // Create an array to hold 'rock', 'paper', 'scissors'
     const getRandomChoice = ['rock', 'paper', 'scissors'];
@@ -9,6 +6,20 @@ const getComputerChoice = () => {
 }
 // Test: Check if output is correct and giving random values : DONE!
 
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+}
+
+function game() {
+    playGame();
+}
+
+function exit() {
+    alert("Okay. Just hit F5 so I can ask you again.");
+}
+
+ask("Try your luck?", game, exit);
 
 // Create a function to play a round with parameters: playerSelection and computerSelection
 function playRound(playerSelection, computerSelection) {
@@ -62,4 +73,4 @@ function playGame() {
     }
 }
 
-playGame();
+
