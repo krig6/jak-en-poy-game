@@ -46,6 +46,8 @@ function playGame() {
         } else if (result === 'lose') {
             computerScore++;
         }
+        console.log(`Player has ${playerScore} points.`);
+        console.log(`Computer has ${computerScore} points.`);
     }
     if (playerScore > computerScore) {
         alert('WON THE GAME!');
