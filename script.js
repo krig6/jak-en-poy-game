@@ -17,23 +17,23 @@ ask("Try your luck?", game, exit);
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log(`Draw!`);
+        console.log("Draw!");
         let outcome = 'draw';
         return outcome;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'rock' && computerSelection === 'scissors') {
-        console.log(`Win!`);
+        console.log("Win!");
         let outcome = 'win';
         return outcome;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors' || playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'scissors' && computerSelection === 'rock') {
-        console.log(`Lose!`);
+        console.log("Lose!");
         let outcome = 'lose'
         return outcome;
     }
 }
 
 function playGame() {
-    let player = 0;
-    let computer = 0;
+    let playerScore = 0;
+    let computerScore = 0;
     for (let i = 1; i <= 5; i++) {
         let playerSelection = prompt("Rock, paper, scissors. Shoot!");
         let computerSelection = getComputerChoice();
@@ -42,18 +42,16 @@ function playGame() {
         console.log(`Computer threw in ${computerSelection}!`);
         let result = playRound(playerSelection, computerSelection);
         if (result === 'win') {
-            player++;
+            playerScore++;
         } else if (result === 'lose') {
-            computer++;
+            computerScore++;
         }
     }
-    if (player > computer) {
+    if (playerScore > computerScore) {
         alert('WON THE GAME!');
-    } else if (computer > player) {
+    } else if (computerScore > playerScore) {
         alert('LOST THE GAME!');
-    } else if (player = computer) {
+    } else if (playerScore = computerScore) {
         alert('DRAW!');
     }
 }
-
-
