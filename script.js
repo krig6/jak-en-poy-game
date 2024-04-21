@@ -36,6 +36,10 @@ function playGame() {
     let computerScore = 0;
     for (let i = 1; i <= 5; i++) {
         let playerSelection = prompt("Rock, paper, scissors. Shoot!");
+        while (!["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
+            alert("Please choose between rock, paper or scissors!");
+            playerSelection = prompt("Rock, paper, scissors. Shoot!");
+        }
         let computerSelection = getComputerChoice();
         console.log(`Round # ${i} Recap`);
         console.log(`Player threw in ${playerSelection}!`);
