@@ -36,9 +36,21 @@ function playGame() {
     let computerScore = 0;
     for (let i = 1; i <= 5; i++) {
         let playerSelection = prompt("Rock, paper, scissors. Shoot!");
+        if (playerSelection !== null) {
+            playerSelection.toLowerCase();
+        } else {
+            alert("You cancelled the game! Hit F5 if you want to play!");
+            return;
+        }
         while (!["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
             alert("Please choose between rock, paper or scissors!");
             playerSelection = prompt("Rock, paper, scissors. Shoot!");
+            if (playerSelection !== null) {
+                playerSelection.toLowerCase();
+            } else {
+                alert("You cancelled the game! Hit F5 if you want to play!");
+                return;
+            }
         }
         let computerSelection = getComputerChoice();
         console.log(`Round # ${i} Recap`);
