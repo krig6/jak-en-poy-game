@@ -17,15 +17,15 @@ ask("Try your luck?", game, exit);
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log("Draw!");
+        console.log(`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
         let outcome = 'draw';
         return outcome;
     } else if (playerSelection === 'scissors' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'rock' || playerSelection === 'rock' && computerSelection === 'scissors') {
-        console.log("Win!");
+        console.log(`You win! Mighty ${playerSelection} trumps ${computerSelection}!`);
         let outcome = 'win';
         return outcome;
     } else if (playerSelection === 'paper' && computerSelection === 'scissors' || playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'scissors' && computerSelection === 'rock') {
-        console.log("Lose!");
+        console.log(`You lose! Better than ${playerSelection}? ${computerSelection}!`);
         let outcome = 'lose'
         return outcome;
     }
@@ -39,7 +39,8 @@ function playGame() {
         if (playerSelection !== null) {
             playerSelection.toLowerCase();
         } else {
-            alert("You cancelled the game! Hit F5 if you want to play!");
+            alert("You cancelled the game. Just hit F5 so I can ask you again!");
+            console.log("Game cancelled. No match winner!");
             return;
         }
         while (!["rock", "paper", "scissors"].includes(playerSelection.toLowerCase())) {
@@ -48,13 +49,14 @@ function playGame() {
             if (playerSelection !== null) {
                 playerSelection.toLowerCase();
             } else {
-                alert("You cancelled the game! Hit F5 if you want to play!");
+                alert("You cancelled the game. Just hit F5 so I can ask you again!");
+                console.log("Game cancelled. No match winner!");
                 return;
             }
         }
         let computerSelection = getComputerChoice();
         console.log(`Round # ${i} Recap`);
-        console.log(`Player threw in ${playerSelection}!`);
+        console.log(`Player threw in ${playerSelection.toLowerCase()}!`);
         console.log(`Computer threw in ${computerSelection}!`);
         let result = playRound(playerSelection, computerSelection);
         if (result === 'win') {
@@ -66,10 +68,10 @@ function playGame() {
         console.log(`Computer has ${computerScore} point${computerScore === 0 ? '' : (computerScore === 1 ? '' : 's')}.`);
     }
     if (playerScore > computerScore) {
-        alert('WON THE GAME!');
+        alert(`You won with ${playerScore} point${playerScore === 0 ? '' : (playerScore === 1 ? '' : 's')}. Try buying a lottery ticket next time!`);
     } else if (computerScore > playerScore) {
-        alert('LOST THE GAME!');
+        alert(`You lost and computer won with ${computerScore} point${computerScore === 0 ? '' : (computerScore === 1 ? '' : 's')}!`);
     } else if (playerScore = computerScore) {
-        alert('DRAW!');
+        alert(`Meh! A tie!`);
     }
 }
