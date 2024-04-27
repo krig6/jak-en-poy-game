@@ -4,6 +4,47 @@
   padding: 0;
 }
 
+@media only screen and (max-width: 1231px) {
+  .container {
+    padding: 30px; /* Adjust padding for smaller screens */
+    width: 80%; /* Adjust container width for smaller screens */
+  }
+
+  .message {
+    font-size: 30px; /* Adjust font size for smaller screens */
+  }
+
+  .scores {
+    font-size: 25px; /* Adjust font size for smaller screens */
+  }
+
+  .choice {
+    height: 200px; /* Adjust height for smaller screens */
+    width: 500px; /* Adjust width for smaller screens */
+  }
+
+  .versus {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .game-buttons {
+    gap: 15px; /* Adjust gap between buttons for smaller screens */
+  }
+
+  #new-game {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    padding: 20px 20px; /* Adjust padding for smaller screens */
+    width: 80px; /* Adjust width for smaller screens */
+  }
+  .player-choice img {
+    max-width: 90px;
+  }
+
+  .computer-choice img {
+    max-width: 90px;
+  }
+}
+
 @font-face {
   font-family: "RETROTECH";
   src: url("./font/RETROTECH.ttf") format(truetype);
