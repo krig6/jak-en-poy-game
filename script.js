@@ -5,6 +5,9 @@ const getComputerChoice = () => {
     return getRandomChoice[Math.floor(Math.random() * getRandomChoice.length)];
 };
 
+const winResponses = ["Nice!", "Keep it up.", "Great!", "Well played!"];
+const drawResponses = ["Draw!", "Oops! Samesies.", "Are you serious?", "No wayyyy!"];
+const lossResponses = ["Unlucky!", "Good try, though.", "Almost!", "Last chance!"];
 
 const showPlayerChoice = document.querySelector(".player-choice");
 const showComputerChoice = document.querySelector(".computer-choice");
@@ -22,13 +25,13 @@ function endGame() {
 
     else if (playerScore === 5) {
         disableButtons.forEach((button) => {
-            message.textContent = ("Win!");
+            message.textContent = ("Bask in Victory!");
             button.disabled = true;
         });
 
     } else if (computerScore === 5) {
         disableButtons.forEach((button) => {
-            message.textContent = ("Lose!");
+            message.textContent = ("Suffer in defeat!");
             button.disabled = true;
         });
     }
@@ -75,19 +78,19 @@ buttons.addEventListener('click', (event) => {
 
 let playerScore = 0;
 let computerScore = 0;
+let draw = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        message.textContent = (`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
+        message.textContent = drawResponses[Math.floor(Math.random() * 3)];
         versus.textContent = "VS";
+        draw++;
     } else if (
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "rock" && computerSelection === "scissors")
     ) {
-        message.textContent = (
-            `You win! Mighty ${playerSelection} trumps ${computerSelection}!`
-        );
+        message.textContent = winResponses[playerScore];
         versus.textContent = "VS";
         playerScore++;
 
@@ -97,9 +100,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "rock" && computerSelection === "paper") ||
         (playerSelection === "scissors" && computerSelection === "rock")
     ) {
-        message.textContent = (
-            `You lose! Better than ${playerSelection}? ${computerSelection}!`
-        );
+        message.textContent = lossResponses[computerScore];
         versus.textContent = "VS";
         computerScore++;
     }
