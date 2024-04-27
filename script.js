@@ -5,6 +5,11 @@ const getComputerChoice = () => {
     return getRandomChoice[Math.floor(Math.random() * getRandomChoice.length)];
 };
 
+
+function getComputerImage() {
+    let computerChoiceImage = createImage(showComputerChoice.getAttribute('data-img', "Computer's Choice", 150, 256));
+    showComputerChoice.appendChild(computerChoiceImage);
+}
 // function to create an image element
 function createImage(src, alt, height, width) {
     let img = new Image();
@@ -14,6 +19,13 @@ function createImage(src, alt, height, width) {
     img.width = width;
     return img;
 }
+
+
+const showPlayerChoice = document.querySelector("player-choice");
+const showComputerChoice = document.querySelector("computer-choice");
+const buttons = document.querySelector(".game-buttons");
+
+
 
 
 
