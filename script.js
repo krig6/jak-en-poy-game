@@ -5,11 +5,20 @@ const getComputerChoice = () => {
     return getRandomChoice[Math.floor(Math.random() * getRandomChoice.length)];
 };
 
+const showPlayerChoice = document.querySelector(".player-choice");
+const showComputerChoice = document.querySelector(".computer-choice");
+const buttons = document.querySelector(".game-buttons");
 
+
+function clearChoices() {
+    showPlayerChoice.innerHTML = "";
+    showComputerChoice.innerHTML = "";
+}
 function getComputerImage() {
-    let computerChoiceImage = createImage(showComputerChoice.getAttribute('data-img', "Computer's Choice", 150, 256));
+    let computerChoiceImage = createImage(showComputerChoice.getAttribute('data-img'), "Computer's Choice", 200, 300);
     showComputerChoice.appendChild(computerChoiceImage);
 }
+
 // function to create an image element
 function createImage(src, alt, height, width) {
     let img = new Image();
@@ -21,12 +30,23 @@ function createImage(src, alt, height, width) {
 }
 
 
-const showPlayerChoice = document.querySelector("player-choice");
-const showComputerChoice = document.querySelector("computer-choice");
-const buttons = document.querySelector(".game-buttons");
+buttons.addEventListener('click', (event) => {
+    let target = event.target;
+    let computer = getComputerChoice()
+    switch (target.id) {
+        case 'rock':
+        case 'paper':
+        case 'scissors':
+            clearChoices();
+            let playerChoiceImage = createImage(`./images/${target.id}.png`, target.id, 200, 300);
+            showPlayerChoice.appendChild(playerChoiceImage);
+            showComputerChoice.setAttribute('data-img', computer.src);
+            getComputerImage();
+            playRound(target.id, computer.choice);
+            break;
 
-
-
+    }
+});
 
 
 function playRound(playerSelection, computerSelection) {
