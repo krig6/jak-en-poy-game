@@ -1,27 +1,32 @@
 # Project: Rock Paper Scissors
 
-## Overview
+Overview
+Welcome to my implementation of the classic "rock paper scissors" game, also known as "jak en poy" in the Philippines. This project serves as both a practical exercise in JavaScript programming and an opportunity to explore web development concepts.
 
-Simple and grade-school classic "rock paper scissors" or "jak en poy" in the Philippines. A game of chance where players can challenge their luck against the computer. Through this project, I aimed to solidify my understanding of Javascript functions while also gaining practical experience with web development.
+You can play the game [here](https://krig6.github.io/jak-en-poy-game/).
 
-Link to project: https://krig6.github.io/jak-en-poy-game/
+## How It's Made
 
-## How It's Made:
+This project is built primarily with JavaScript and utilizes HTML and CSS for the user interface. I've incorporated functions, event listeners, and user interface elements to create an interactive gaming experience.
 
-This project was created with Javascript, following the guidance and courses from The Odin Project. As an IT graduate who had previously worked in the travel industry, I sought to explore programming and transition into a career aligned with my academic background.
+## How to Play
 
-## How to play
-
-1. Open Javascript console Option + ⌘ + J (on macOS), or Shift + CTRL + J (on Windows/Linux) in your web browser.
-2. Click 'ok' when prompted with the message 'Try your luck?'
-3. When prompted, input your choice: 'rock', 'paper', 'scissors'.
-4. After each round, your choice and computer's choice will be printed, including the result of the round.
-5. You can play for 5 rounds and an alert will show if you won or lost.
+1. Visit the [game link](https://krig6.github.io/jak-en-poy-game/) in your web browser.
+2. Click "Start Game" to begin.
+3. Select your choice (rock, paper, or scissors) by clicking on the corresponding icon.
+4. After each selection, the computer will randomly choose its move, and the outcome of the round will be displayed.
+5. Repeat steps 3-4 until the game ends after five rounds.
+6. A message will appear indicating whether you've won or lost the game.
 
 ## Learning Path
 
-Starting with basics, familiarizing myself with Javascript syntax, data types, functions and understanding errors which are essential in creating this project. For instance, I utilized control flow statements to implement game logic, such as determining the winner in a rock-paper-scissors game.
+Throughout the development of this project, I've deepened my understanding of JavaScript functions, event handling, and DOM manipulation. By implementing game logic and user interface elements, I've honed my skills in creating interactive web applications.
 
-## Future Endeavors
+## Future Enhancements
 
-As I continue my journey to becoming a proficient web developer. I plan to expand this project by implementing graphical user interface, additional features and improve existing functions. I will also explore frameworks and libraries and aim to complete The Odin Project.
+In the future, I plan to further enhance this project by:
+
+- Improving the user interface with animations and transitions.
+- Implementing multiplayer functionality for gaming with friends online.
+- Exploring additional game variations or modes.
+- Continuing my journey as a web developer, I aim to explore more advanced JavaScript concepts and frameworks to create even more dynamic and engaging web applications.
