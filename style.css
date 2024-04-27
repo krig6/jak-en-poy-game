@@ -6,35 +6,34 @@
 
 @media only screen and (max-width: 1231px) {
   .container {
-    padding: 30px; /* Adjust padding for smaller screens */
-    width: 80%; /* Adjust container width for smaller screens */
+    padding: 30px;
   }
 
   .message {
-    font-size: 30px; /* Adjust font size for smaller screens */
+    font-size: 30px;
   }
 
   .scores {
-    font-size: 25px; /* Adjust font size for smaller screens */
+    font-size: 25px;
   }
 
   .choice {
-    height: 200px; /* Adjust height for smaller screens */
-    width: 500px; /* Adjust width for smaller screens */
+    height: 200px;
+    width: 500px;
   }
 
   .versus {
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 20px;
   }
 
   .game-buttons {
-    gap: 15px; /* Adjust gap between buttons for smaller screens */
+    gap: 15px;
   }
 
   #new-game {
-    font-size: 20px; /* Adjust font size for smaller screens */
-    padding: 20px 20px; /* Adjust padding for smaller screens */
-    width: 80px; /* Adjust width for smaller screens */
+    font-size: 20px;
+    padding: 20px 20px;
+    width: 80px;
   }
   .player-choice img {
     max-width: 90px;
@@ -51,29 +50,29 @@
 }
 
 body {
-  height: 100vh;
-  background-color: #ece6c2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #ece6c2;
   color: #6f5643;
   font-family: "RETROTECH";
 }
 
 button {
-  cursor: pointer;
   background-color: #6f5643;
+  cursor: pointer;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.1);
-  padding: 50px;
   background-color: #ece6c2;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  padding: 50px;
 }
 
 .message {
@@ -94,15 +93,17 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
-  gap: 50px;
   height: 260px;
   width: 650px;
+  gap: 50px;
+  margin-bottom: 30px;
 }
+
 .player-score,
 .computer-score {
   font-size: 35px;
 }
+
 .versus {
   font-size: 25px;
 }
@@ -114,19 +115,15 @@ button {
 }
 
 button:active {
-  /* background-color: #503d2f; */
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   transform: scale(0.97);
 }
+
 #rock,
 #paper,
 #scissors {
-  display: inline-block;
-  /* padding: 5px 5px; */
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -161,14 +158,14 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6f5643;
-  font-size: 24px;
   background-color: #ece6c2;
-  font-weight: 300;
-  border: 2px solid #6f5643;
-  padding: 25px 25px;
-  border-radius: 7px;
-  font-family: "RETROTECH";
+  color: #6f5643;
   height: 30px;
   width: 100px;
+  font-size: 24px;
+  font-weight: 300;
+  border: 2px solid #6f5643;
+  border-radius: 7px;
+  padding: 25px 25px;
+  font-family: "RETROTECH";
 }
