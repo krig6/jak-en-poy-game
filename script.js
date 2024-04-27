@@ -5,6 +5,16 @@ const getComputerChoice = () => {
     return getRandomChoice[Math.floor(Math.random() * getRandomChoice.length)];
 };
 
+// function to create an image element
+function createImage(src, alt, height, width) {
+    let img = new Image();
+    img.src = src;
+    img.alt = alt;
+    img.height = height;
+    img.width = width;
+    return img;
+}
+
 
 
 function playRound(playerSelection, computerSelection) {
