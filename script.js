@@ -14,6 +14,7 @@ const message = document.querySelector(".message");
 const showPlayerScore = document.querySelector(".player-score");
 const showComputerScore = document.querySelector(".computer-score");
 const versus = document.querySelector(".versus");
+const newGame = document.querySelector("#new-game");
 
 
 function endGame() {
@@ -106,3 +107,15 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+newGame.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+    showPlayerScore.textContent = 0;
+    showComputerScore.textContent = 0
+    message.textContent = ("Try your luck?");
+    versus.textContent = ("Choose your weapon to play!");
+    clearChoices();
+    disableButtons.forEach((button) => {
+        button.disabled = false;
+    });
+});
