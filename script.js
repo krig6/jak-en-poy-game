@@ -5,17 +5,20 @@ const getComputerChoice = () => {
     return getRandomChoice[Math.floor(Math.random() * getRandomChoice.length)];
 };
 
+
 const showPlayerChoice = document.querySelector(".player-choice");
 const showComputerChoice = document.querySelector(".computer-choice");
 const buttons = document.querySelector(".game-buttons");
-
+const message = document.querySelector(".message");
+const showPlayerScore = document.querySelector(".player-score");
+const showComputerScore = document.querySelector(".computer-score");
 
 function clearChoices() {
     showPlayerChoice.innerHTML = "";
     showComputerChoice.innerHTML = "";
 }
 function getComputerImage() {
-    let computerChoiceImage = createImage(showComputerChoice.getAttribute('data-img'), "Computer's Choice", 200, 300);
+    let computerChoiceImage = createImage(showComputerChoice.getAttribute('data-img'), "Computer's Choice", 256, 256);
     showComputerChoice.appendChild(computerChoiceImage);
 }
 
@@ -29,7 +32,6 @@ function createImage(src, alt, height, width) {
     return img;
 }
 
-
 buttons.addEventListener('click', (event) => {
     let target = event.target;
     let computer = getComputerChoice()
@@ -38,42 +40,44 @@ buttons.addEventListener('click', (event) => {
         case 'paper':
         case 'scissors':
             clearChoices();
-            let playerChoiceImage = createImage(`./images/${target.id}.png`, target.id, 200, 300);
+            let playerChoiceImage = createImage(`./images/${target.id}.png`, target.id, 256, 256);
             showPlayerChoice.appendChild(playerChoiceImage);
             showComputerChoice.setAttribute('data-img', computer.src);
             getComputerImage();
             playRound(target.id, computer.choice);
+            showPlayerScore.textContent = playerScore;
+            showComputerScore.textContent = computerScore;
             break;
 
     }
 });
 
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log(`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
-        let outcome = "draw";
-        return outcome;
+        message.textContent = (`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
     } else if (
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "rock" && computerSelection === "scissors")
     ) {
-        console.log(
+        message.textContent = (
             `You win! Mighty ${playerSelection} trumps ${computerSelection}!`
         );
-        let outcome = "win";
-        return outcome;
+        playerScore++;
+
+
     } else if (
         (playerSelection === "paper" && computerSelection === "scissors") ||
         (playerSelection === "rock" && computerSelection === "paper") ||
         (playerSelection === "scissors" && computerSelection === "rock")
     ) {
-        console.log(
+        message.textContent = (
             `You lose! Better than ${playerSelection}? ${computerSelection}!`
         );
-        let outcome = "lose";
-        return outcome;
+        computerScore++;
     }
 }
 
