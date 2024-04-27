@@ -13,15 +13,24 @@ const disableButtons = document.querySelectorAll(".game-buttons button");
 const message = document.querySelector(".message");
 const showPlayerScore = document.querySelector(".player-score");
 const showComputerScore = document.querySelector(".computer-score");
+const versus = document.querySelector(".versus");
 
 
 function endGame() {
     if (playerScore !== 5 && computerScore !== 5) return;
 
-    disableButtons.forEach((button) => {
+    else if (playerScore === 5) {
+        disableButtons.forEach((button) => {
+            message.textContent = ("Win!");
+            button.disabled = true;
+        });
 
-        button.disabled = true;
-    });
+    } else if (computerScore === 5) {
+        disableButtons.forEach((button) => {
+            message.textContent = ("Lose!");
+            button.disabled = true;
+        });
+    }
 }
 
 function clearChoices() {
@@ -68,15 +77,17 @@ let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        message.textContent = (`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
+        // message.textContent = (`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
+        versus.textContent = "VS";
     } else if (
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "rock" && computerSelection === "scissors")
     ) {
-        message.textContent = (
-            `You win! Mighty ${playerSelection} trumps ${computerSelection}!`
-        );
+        // message.textContent = (
+        //     `You win! Mighty ${playerSelection} trumps ${computerSelection}!`
+        // );
+        versus.textContent = "VS";
         playerScore++;
 
 
@@ -85,9 +96,10 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "rock" && computerSelection === "paper") ||
         (playerSelection === "scissors" && computerSelection === "rock")
     ) {
-        message.textContent = (
-            `You lose! Better than ${playerSelection}? ${computerSelection}!`
-        );
+        // message.textContent = (
+        //     `You lose! Better than ${playerSelection}? ${computerSelection}!`
+        // );
+        versus.textContent = "VS";
         computerScore++;
     }
     endGame();
