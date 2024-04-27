@@ -14,7 +14,7 @@ const message = document.querySelector(".message");
 const showPlayerScore = document.querySelector(".player-score");
 const showComputerScore = document.querySelector(".computer-score");
 const versus = document.querySelector(".versus");
-const newGame = document.querySelector("#new-game");
+const newGameButton = document.querySelector("#new-game");
 
 
 function endGame() {
@@ -78,16 +78,16 @@ let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        // message.textContent = (`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
+        message.textContent = (`It's a draw! Both unsheathed "${playerSelection}" weapons!`);
         versus.textContent = "VS";
     } else if (
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "rock" && computerSelection === "scissors")
     ) {
-        // message.textContent = (
-        //     `You win! Mighty ${playerSelection} trumps ${computerSelection}!`
-        // );
+        message.textContent = (
+            `You win! Mighty ${playerSelection} trumps ${computerSelection}!`
+        );
         versus.textContent = "VS";
         playerScore++;
 
@@ -97,9 +97,9 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "rock" && computerSelection === "paper") ||
         (playerSelection === "scissors" && computerSelection === "rock")
     ) {
-        // message.textContent = (
-        //     `You lose! Better than ${playerSelection}? ${computerSelection}!`
-        // );
+        message.textContent = (
+            `You lose! Better than ${playerSelection}? ${computerSelection}!`
+        );
         versus.textContent = "VS";
         computerScore++;
     }
@@ -107,15 +107,17 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-newGame.addEventListener('click', () => {
+function newGame() {
     playerScore = 0;
     computerScore = 0;
     showPlayerScore.textContent = 0;
-    showComputerScore.textContent = 0
+    showComputerScore.textContent = 0;
     message.textContent = ("Try your luck?");
     versus.textContent = ("Choose your weapon to play!");
     clearChoices();
     disableButtons.forEach((button) => {
         button.disabled = false;
     });
-});
+}
+
+newGameButton.addEventListener('click', newGame);
