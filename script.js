@@ -1,5 +1,7 @@
 const getComputerChoice = () => {
-    const getRandomChoice = ["rock", "paper", "scissors"];
+    const getRandomChoice = [
+        { choice: 'rock', src: './images/rock.png' }, { choice: 'paper', src: './images/paper.png' }, { choice: 'scissors', src: './images/scissors.png' }
+    ];
     return getRandomChoice[Math.floor(Math.random() * getRandomChoice.length)];
 };
 
