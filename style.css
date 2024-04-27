@@ -54,7 +54,7 @@ button {
   gap: 50px;
 }
 
-.buttons {
+.game-buttons {
   display: flex;
   gap: 25px;
   margin-bottom: 20px;
