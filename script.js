@@ -9,9 +9,20 @@ const getComputerChoice = () => {
 const showPlayerChoice = document.querySelector(".player-choice");
 const showComputerChoice = document.querySelector(".computer-choice");
 const buttons = document.querySelector(".game-buttons");
+const disableButtons = document.querySelectorAll(".game-buttons button");
 const message = document.querySelector(".message");
 const showPlayerScore = document.querySelector(".player-score");
 const showComputerScore = document.querySelector(".computer-score");
+
+
+function endGame() {
+    if (playerScore !== 5 && computerScore !== 5) return;
+
+    disableButtons.forEach((button) => {
+
+        button.disabled = true;
+    });
+}
 
 function clearChoices() {
     showPlayerChoice.innerHTML = "";
@@ -79,5 +90,7 @@ function playRound(playerSelection, computerSelection) {
         );
         computerScore++;
     }
+    endGame();
 }
+
 
