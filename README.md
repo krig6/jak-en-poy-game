@@ -1,6 +1,7 @@
 # Project: Rock Paper Scissors
 
-Overview
+## Overview
+
 Welcome to my implementation of the classic "rock paper scissors" game, also known as "jak en poy" in the Philippines. This project serves as both a practical exercise in JavaScript programming and an opportunity to explore web development concepts.
 
 You can play the game [here](https://krig6.github.io/jak-en-poy-game/).
